@@ -1,65 +1,66 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import {
+  FaSearch,
+  FaUser,
+  FaShoppingCart,
+  FaBars,
+  FaTimes,
+  FaChevronDown,
+} from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
-import { FaBars, FaTimes, FaShoppingCart } from "react-icons/fa";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white shadow-md text-gray-900"
+          : "bg-transparent text-white"
+      }`}
+    >
+      {/* Top Row */}
+      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+
+        {/* Left */}
+        <div className="flex items-center">
+          <button className="text-xl hover:text-pink-500 transition">
+            <FaSearch />
+          </button>
+        </div>
 
         {/* Logo */}
         <Link
           to="/"
-          className="text-2xl font-bold text-pink-600"
+          className="text-3xl font-bold tracking-widest"
         >
           GlowCart
         </Link>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-8 font-medium">
+        {/* Right */}
+        <div className="hidden md:flex items-center gap-6">
 
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-pink-600"
-                  : "hover:text-pink-600 transition"
-              }
-            >
-              Home
-            </NavLink>
-          </li>
+          <button className="text-xl hover:text-pink-500 transition">
+            <FaUser />
+          </button>
 
-          <li>
-            <NavLink
-              to="/shop"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-pink-600"
-                  : "hover:text-pink-600 transition"
-              }
-            >
-              Shop
-            </NavLink>
-          </li>
+          <button className="text-xl hover:text-pink-500 transition relative">
+            <FaShoppingCart />
+          </button>
 
-          <li>
-            <NavLink
-              to="/cart"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-pink-600"
-                  : "hover:text-pink-600 transition"
-              }
-            >
-              <FaShoppingCart className="text-xl" />
-            </NavLink>
-          </li>
-
-        </ul>
+        </div>
 
         {/* Mobile Menu Button */}
         <button
@@ -68,45 +69,77 @@ function Navbar() {
         >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
-
       </div>
+
+      {/* Bottom Menu */}
+      <nav className="hidden md:block border-t border-white/20">
+        <ul className="flex justify-center gap-12 py-4 font-medium">
+
+          <li>
+            <NavLink
+              to="/"
+              className="hover:text-pink-500 transition"
+            >
+              Home
+            </NavLink>
+          </li>
+
+          <li>
+            <button className="flex items-center gap-2 hover:text-pink-500 transition">
+              Shop
+              <FaChevronDown size={12} />
+            </button>
+          </li>
+
+          <li>
+            <button className="flex items-center gap-2 hover:text-pink-500 transition">
+              Categories
+              <FaChevronDown size={12} />
+            </button>
+          </li>
+
+          <li>
+            <NavLink
+              to="/contact"
+              className="hover:text-pink-500 transition"
+            >
+              Contact
+            </NavLink>
+          </li>
+
+        </ul>
+      </nav>
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white shadow-lg">
-          <ul className="flex flex-col items-center py-4 gap-4">
+        <div className="md:hidden bg-white text-gray-900 shadow-lg">
+          <ul className="flex flex-col items-center gap-5 py-6">
 
-            <li>
-              <NavLink
-                to="/"
-                onClick={() => setMenuOpen(false)}
-              >
-                Home
-              </NavLink>
-            </li>
+            <NavLink to="/" onClick={() => setMenuOpen(false)}>
+              Home
+            </NavLink>
 
-            <li>
-              <NavLink
-                to="/shop"
-                onClick={() => setMenuOpen(false)}
-              >
-                Shop
-              </NavLink>
-            </li>
+            <NavLink to="/shop" onClick={() => setMenuOpen(false)}>
+              Shop
+            </NavLink>
 
-            <li>
-              <NavLink
-                to="/cart"
-                onClick={() => setMenuOpen(false)}
-              >
-                Cart
-              </NavLink>
-            </li>
+            <NavLink to="/" onClick={() => setMenuOpen(false)}>
+              Categories
+            </NavLink>
+
+            <NavLink to="/contact" onClick={() => setMenuOpen(false)}>
+              Contact
+            </NavLink>
+
+            <div className="flex gap-6 pt-3 text-xl">
+              <FaUser />
+              <FaShoppingCart />
+            </div>
 
           </ul>
         </div>
       )}
-    </nav>
+    </header>
   );
 }
 
