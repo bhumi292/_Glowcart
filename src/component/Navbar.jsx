@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import logo from "../assets/gtlogo.webp"; // path તમારી project પ્રમાણે change કરો
 import {
   FaSearch,
   FaUser,
@@ -36,27 +37,28 @@ function Navbar() {
 
         {/* Left */}
         <div className="flex items-center">
-          <button className="text-xl hover:text-pink-500 transition">
+          <button className="text-xl text-black">
             <FaSearch />
           </button>
         </div>
 
         {/* Logo */}
-        <Link
-          to="/"
-          className="text-3xl font-bold tracking-widest"
-        >
-          GlowCart
+        <Link to="/" className="flex items-center">
+        <img
+          src={logo}
+          alt="GlowCart Logo"
+          className="w-50 h-50 object-contain"
+        />
         </Link>
 
         {/* Right */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="md:flex items-center gap-6">
 
-          <button className="text-xl hover:text-pink-500 transition">
+          <button className="text-xl text-black">
             <FaUser />
           </button>
 
-          <button className="text-xl hover:text-pink-500 transition relative">
+          <button className="text-xl text-black">
             <FaShoppingCart />
           </button>
 
@@ -76,35 +78,31 @@ function Navbar() {
         <ul className="flex justify-center gap-12 py-4 font-medium">
 
           <li>
-            <NavLink
-              to="/"
-              className="hover:text-pink-500 transition"
-            >
+            <button className="flex items-center gap-2 text-pink-500">
               Home
-            </NavLink>
+              <FaChevronDown size={12} />
+            </button>
           </li>
 
           <li>
-            <button className="flex items-center gap-2 hover:text-pink-500 transition">
+            <button className="flex items-center gap-2 text-pink-500">
               Shop
               <FaChevronDown size={12} />
             </button>
           </li>
 
           <li>
-            <button className="flex items-center gap-2 hover:text-pink-500 transition">
+            <button className="flex items-center gap-2 text-pink-500">
               Categories
               <FaChevronDown size={12} />
             </button>
           </li>
 
           <li>
-            <NavLink
-              to="/contact"
-              className="hover:text-pink-500 transition"
-            >
-              Contact
-            </NavLink>
+            <button className="flex items-center gap-2 text-pink-500">
+              About
+              <FaChevronDown size={12} />
+            </button>
           </li>
 
         </ul>

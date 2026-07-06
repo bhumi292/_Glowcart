@@ -4,7 +4,7 @@ import heroImage from "../assets/h2.webp";
 
 function Hero() {
   return (
-    <section className="bg-gradient-to-r from-pink-50 to-rose-100 min-h-[90vh] flex items-center">
+    <section className="bg-gradient-to-r from-pink-50 to-rose-300 min-h-[90vh] flex items-center">
       <div className="max-w-7xl mx-auto px-6 py-16 w-full">
 
         <div className="grid md:grid-cols-2 items-center gap-12">

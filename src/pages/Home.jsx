@@ -1,4 +1,4 @@
-import Hero from "../component/Hero";
+//import Hero from "../component/Hero";
 import Navbar from "../component/Navbar";
 
 function Home() {
@@ -6,7 +6,7 @@ function Home() {
     <>
     
     <Navbar />
-    <Hero />
+    {/*<Hero /> */}
    
     </>
   );
