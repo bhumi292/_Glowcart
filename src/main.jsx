@@ -6,7 +6,7 @@ import App from "./App";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter basename="/_Glowcart">
+    <BrowserRouter basename="/glow-cart">
       <App />
     </BrowserRouter>
   </StrictMode>

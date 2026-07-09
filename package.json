@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://bhumi292.github.io/_Glowcart/",
+  "homepage": "https://bhumi292.github.io/glow-cart/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
