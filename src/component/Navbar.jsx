@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import logo from "../assets/gtlogo.webp"; // path તમારી project પ્રમાણે change કરો
+import logo from "../assets/gt1.png"; 
 import {
   FaSearch,
   FaUser,
@@ -33,11 +33,11 @@ function Navbar() {
       }`}
     >
       {/* Top Row */}
-      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-0 flex items-center justify-between">
 
         {/* Left */}
         <div className="flex items-center">
-          <button className="text-xl text-black">
+          <button className="text-2xl text-black">
             <FaSearch />
           </button>
         </div>
@@ -47,18 +47,18 @@ function Navbar() {
         <img
           src={logo}
           alt="GlowCart Logo"
-          className="w-50 h-50 object-contain"
+          className="w-32 h-32 object-contain"
         />
         </Link>
 
         {/* Right */}
         <div className="md:flex items-center gap-6">
 
-          <button className="text-xl text-black">
+          <button className="text-2xl text-black">
             <FaUser />
           </button>
 
-          <button className="text-xl text-black">
+          <button className="text-2xl text-black">
             <FaShoppingCart />
           </button>
 
@@ -79,29 +79,29 @@ function Navbar() {
 
           <li>
             <button className="flex items-center gap-2 text-pink-500">
-              Home
-              <FaChevronDown size={12} />
+              HOME
+              <FaChevronDown size={9} />
             </button>
           </li>
 
           <li>
             <button className="flex items-center gap-2 text-pink-500">
-              Shop
-              <FaChevronDown size={12} />
+              SHOP
+              <FaChevronDown size={9} />
             </button>
           </li>
 
           <li>
             <button className="flex items-center gap-2 text-pink-500">
-              Categories
-              <FaChevronDown size={12} />
+              CATEGORIES
+              <FaChevronDown size={9} />
             </button>
           </li>
 
           <li>
             <button className="flex items-center gap-2 text-pink-500">
-              About
-              <FaChevronDown size={12} />
+              ABOUT
+              <FaChevronDown size={9} />
             </button>
           </li>
 
