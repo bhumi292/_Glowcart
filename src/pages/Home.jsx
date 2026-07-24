@@ -1,12 +1,12 @@
-import Hero from "../component/Hero";
 import Navbar from "../component/Navbar";
+import Hero from "../component/Hero";
 
 function Home() {
   return (
     <>
     
     <Navbar />
-    <Hero />   
+    <Hero />
     </>
   );
 }

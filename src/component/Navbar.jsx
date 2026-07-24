@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import logo from "../assets/gt1.png"; 
+import logo from "../assets/gt.png"; 
 import {
   FaSearch,
   FaUser,
@@ -27,13 +27,13 @@ function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white shadow-md text-gray-900"
-          : "bg-transparent text-white"
+      scrolled
+        ? "bg-white shadow-md"
+        : "bg-white/90 backdrop-blur-md"
       }`}
     >
       {/* Top Row */}
-      <div className="max-w-7xl mx-auto px-0 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-5 h-20 flex items-center justify-between">
 
         {/* Left */}
         <div className="flex items-center">
@@ -47,7 +47,7 @@ function Navbar() {
         <img
           src={logo}
           alt="GlowCart Logo"
-          className="w-32 h-32 object-contain"
+          className="w-36 md:w-50 h-auto object-contain"
         />
         </Link>
 
@@ -75,32 +75,32 @@ function Navbar() {
 
       {/* Bottom Menu */}
       <nav className="hidden md:block border-t border-white/20">
-        <ul className="flex justify-center gap-12 py-4 font-medium">
+       <ul className="flex justify-center gap-10 py-3 font-medium text-[15px]">
 
           <li>
             <button className="flex items-center gap-2 text-pink-500">
-              HOME
+              Home
               <FaChevronDown size={9} />
             </button>
           </li>
 
           <li>
             <button className="flex items-center gap-2 text-pink-500">
-              SHOP
+              Shop
               <FaChevronDown size={9} />
             </button>
           </li>
 
           <li>
             <button className="flex items-center gap-2 text-pink-500">
-              CATEGORIES
+              Categories
               <FaChevronDown size={9} />
             </button>
           </li>
 
           <li>
             <button className="flex items-center gap-2 text-pink-500">
-              ABOUT
+              About
               <FaChevronDown size={9} />
             </button>
           </li>
