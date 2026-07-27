@@ -13,6 +13,7 @@ import { Link, NavLink } from "react-router-dom";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,13 +26,15 @@ function Navbar() {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-      scrolled
-        ? "bg-white shadow-md"
-        : "bg-white/90 backdrop-blur-md"
-      }`}
-    >
+  <header
+  onMouseEnter={() => setHovered(true)}
+  onMouseLeave={() => setHovered(false)}
+  className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+    scrolled || hovered
+      ? "bg-white/80 backdrop-blur-md shadow-md"
+      : "bg-transparent"
+  }`}
+>
       {/* Top Row */}
       <div className="max-w-7xl mx-auto px-5 h-20 flex items-center justify-between">
 
@@ -74,7 +77,7 @@ function Navbar() {
       </div>
 
       {/* Bottom Menu */}
-      <nav className="hidden md:block border-t border-white/20">
+      <nav className="hidden md:block">
        <ul className="flex justify-center gap-10 py-3 font-medium text-[15px]">
 
           <li>
