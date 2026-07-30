@@ -81,28 +81,28 @@ function Navbar() {
        <ul className="flex justify-center gap-10 py-3 font-medium text-[15px]">
 
           <li>
-            <button className="flex items-center gap-2 text-pink-500">
+            <button className="flex items-center gap-2 text-pink-700">
               Home
               <FaChevronDown size={9} />
             </button>
           </li>
 
           <li>
-            <button className="flex items-center gap-2 text-pink-500">
+            <button className="flex items-center gap-2 text-pink-700">
               Shop
               <FaChevronDown size={9} />
             </button>
           </li>
 
           <li>
-            <button className="flex items-center gap-2 text-pink-500">
+            <button className="flex items-center gap-2 text-pink-700">
               Categories
               <FaChevronDown size={9} />
             </button>
           </li>
 
           <li>
-            <button className="flex items-center gap-2 text-pink-500">
+            <button className="flex items-center gap-2 text-pink-700">
               About
               <FaChevronDown size={9} />
             </button>
