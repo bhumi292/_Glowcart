@@ -23,7 +23,7 @@ function Hero() {
   className="text-6xl font-bold"
   style={{ fontFamily: "'Playfair Display', serif" }}
 >
-  Elevate Your Beauty Routine
+  Look Gorgeous
 </h1>
 
 <p
