@@ -1,21 +1,26 @@
 import { motion } from "framer-motion";
 
+import makeupImg from "../assets/m.jpg";
+import skincareImg from "../assets/s.jpg";
+import fragranceImg from "../assets/f.jpg";
+import nailsImg from "../assets/n.png";
+
 const categories = [
   {
     title: "Makeup",
-    image: "/src/assets/s.webp",
+    image: makeupImg,
   },
   {
     title: "Skincare",
-    image:  "/src/assets/m.jpg",
+    image: skincareImg,
   },
   {
     title: "Fragrance",
-    image:  "/src/assets/m.jpg",
+    image: fragranceImg,
   },
   {
     title: "Nails & Beauty",
-    image:  "/src/assets/m.jpg",
+    image: nailsImg,
   },
 ];
 
@@ -24,7 +29,6 @@ function Category() {
     <section className="py-20 bg-pink-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
-        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,7 +37,7 @@ function Category() {
           className="text-center mb-12"
         >
           <h2
-            className="text-4xl md:text-5xl font-bold text-gray-900"
+            className="text-4xl md:text-5xl font-bold"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Shop By Category
@@ -47,7 +51,6 @@ function Category() {
           </p>
         </motion.div>
 
-        {/* Category Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((category, index) => (
             <motion.div
@@ -60,19 +63,16 @@ function Category() {
                 delay: index * 0.15,
               }}
               whileHover={{ y: -8 }}
-              className="group relative h-80 overflow-hidden rounded-2xl cursor-pointer shadow-md"
+              className="group relative h-80 overflow-hidden cursor-pointer shadow-md"
             >
-              {/* Image */}
               <img
                 src={category.image}
                 alt={category.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
 
-              {/* Overlay */}
               <div className="absolute inset-0 bg-black/25 group-hover:bg-black/40 transition"></div>
 
-              {/* Content */}
               <div className="absolute inset-0 flex flex-col items-center justify-end pb-8 text-white">
                 <h3
                   className="text-2xl font-semibold"
